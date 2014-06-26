@@ -50,7 +50,7 @@
                 [array addObject:separatedComponent];
             }
             
-            { // update serch range
+            { // update search range
                 searchRange.location = (foundRange.location + foundRange.length);
                 searchRange.length   = (self.length - searchRange.location);
             }
