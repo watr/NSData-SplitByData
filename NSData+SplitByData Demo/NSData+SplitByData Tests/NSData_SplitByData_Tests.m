@@ -1,17 +1,17 @@
 //
-//  NSData_SeparateByData_Tests.m
-//  NSData+SeparateByData Tests
+//  NSData_SplitByData_Tests.m
+//  NSData+SplitByData Tests
 //
 //  Created by HASHIMOTO Wataru on 6/24/14.
 //  Copyright (c) 2014 HASHIMOTO Wataru. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import "NSData+WAHSeparateByData.h"
+#import "NSData+WAHSplitByData.h"
 
 #define PRINT_COMPONENTS_AS_STRING (false)
 
-@interface NSData_SeparateByData_Tests : XCTestCase
+@interface NSData_SplitByData_Tests : XCTestCase
 
 @property (copy)           NSString *sampleDirectoryPath;
 @property (copy, readonly) NSString *sampleDataFileName;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation NSData_SeparateByData_Tests
+@implementation NSData_SplitByData_Tests
 
 - (void)setUp
 {
@@ -55,7 +55,7 @@
 
 @end
 
-@interface CRLFDataTests : NSData_SeparateByData_Tests
+@interface CRLFDataTests : NSData_SplitByData_Tests
 
 @end
 
@@ -76,7 +76,7 @@
         [NSData dataWithBytes:bytes
                        length:2];
     });
-    NSArray *components = [self.sampleData wah_componentsSeparatedByDataBytes:crlfSeparator];
+    NSArray *components = [self.sampleData wah_componentsSplitByDataBytes:crlfSeparator];
     
 #if PRINT_COMPONENTS_AS_STRING
     for (NSData *data in components) {
@@ -92,7 +92,7 @@
 
 @end
 
-@interface CRorLFDataTests : NSData_SeparateByData_Tests
+@interface CRorLFDataTests : NSData_SplitByData_Tests
 
 @end
 
@@ -133,7 +133,7 @@
     
     
     
-    NSArray *components = [self.sampleData wah_componentsSeparatedByDataBytesInSet:separatorSet];
+    NSArray *components = [self.sampleData wah_componentsSplitByDataBytesInSet:separatorSet];
     
 #if PRINT_COMPONENTS_AS_STRING
     for (NSData *data in components) {

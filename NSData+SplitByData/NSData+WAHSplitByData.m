@@ -1,22 +1,22 @@
 //
-//  NSData+WAHSeparateByData.m
+//  NSData+WAHSplitByData.m
 //
 //  Created by HASHIMOTO Wataru on 6/24/14.
 //  Copyright (c) 2014 HASHIMOTO Wataru. All rights reserved.
 //
 
-#import "NSData+WAHSeparateByData.h"
+#import "NSData+WAHSplitByData.h"
 
-@implementation NSData (WAHSeparateByData)
+@implementation NSData (WAHSplitByData)
 
-- (NSArray *)wah_componentsSeparatedByDataBytes:(NSData *const)separator
+- (NSArray *)wah_componentsSplitByDataBytes:(NSData *const)separator
 {
     NSSet *const separatorAsSet = [NSSet setWithArray:(separator ? @[separator] : @[])];
     
-    return [self wah_componentsSeparatedByDataBytesInSet:separatorAsSet];
+    return [self wah_componentsSplitByDataBytesInSet:separatorAsSet];
 }
 
-- (NSArray *)wah_componentsSeparatedByDataBytesInSet:(NSSet *const)separatorSet
+- (NSArray *)wah_componentsSplitByDataBytesInSet:(NSSet *const)separatorSet
 {
     NSArray *components = nil;
     
@@ -45,9 +45,9 @@
                 NSMakeRange(location, length);
             });
             
-            NSData *const separatedComponent = [self subdataWithRange:subdataRange];
-            if (separatedComponent) {
-                [array addObject:separatedComponent];
+            NSData *const splitComponent = [self subdataWithRange:subdataRange];
+            if (splitComponent) {
+                [array addObject:splitComponent];
             }
             
             { // update search range

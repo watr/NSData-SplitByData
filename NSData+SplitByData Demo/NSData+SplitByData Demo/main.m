@@ -1,13 +1,13 @@
 //
 //  main.m
-//  NSData+SeparateByData Demo
+//  NSData+SplitByData Demo
 //
 //  Created by HASHIMOTO Wataru on 6/24/14.
 //  Copyright (c) 2014 HASHIMOTO Wataru. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "NSData+SeparateByData.h"
+#import "NSData+SplitByData.h"
 
 int main(int argc, const char * argv[])
 {
@@ -30,8 +30,8 @@ int main(int argc, const char * argv[])
                 
                 printf("crlf sample data\n");
                 printf("%s\n", [[sampleData description] UTF8String]);
-                printf("components separated by crlf data\n"
-                       "%s\n", [[[sampleData componentsSeparatedByDataBytes:separator] description] UTF8String]);
+                printf("components split by crlf data\n"
+                       "%s\n", [[[sampleData componentsSplitByDataBytes:separator] description] UTF8String]);
             }
             
             { // cr or lf
@@ -60,8 +60,8 @@ int main(int argc, const char * argv[])
                 
                 printf("cr or lf sample data\n");
                 printf("%s\n", [[sampleData description] UTF8String]);
-                printf("components separated by cr or lf data\n"
-                       "%s\n", [[[sampleData componentsSeparatedByDataBytesInSet:separatorSet] description] UTF8String]);
+                printf("components split by cr or lf data\n"
+                       "%s\n", [[[sampleData componentsSplitByDataBytesInSet:separatorSet] description] UTF8String]);
             }
         }
     }
