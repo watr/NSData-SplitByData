@@ -1,4 +1,4 @@
-NSData-SeparateByData
+NSData-SplitByData
 =====================
 
-NSData extension, to separate data by data or set of data.
+NSData extension, to split data by data or set of data.
